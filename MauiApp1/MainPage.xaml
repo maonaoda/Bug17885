@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage">
+    <AbsoluteLayout VerticalOptions="Fill" BackgroundColor="#F3F3F7">
+        <CollectionView x:Name="ResultCollectionView" IsVisible="{Binding User.ShowResultCollectionView}" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0,0,1,1" Margin="0"
+                            ItemsSource="{Binding Users}" 
+                        Header="{Binding .}" Footer="{Binding .}"
+                        VerticalOptions="FillAndExpand" VerticalScrollBarVisibility ="Always">
+            <CollectionView.HeaderTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" Padding="15, 10, 10, 10" HorizontalOptions="Fill" BackgroundColor="#FFFFFF" Spacing="6">
+                            <Label Text="Name" TextColor="#666666" FontSize="14" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                            <Label Text="Tom" TextColor="#666666" FontSize="14" HorizontalOptions="End" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Spacing="0" Padding="0, 20" HorizontalOptions="Fill" BackgroundColor="#FFFFFF">
+                            <Label Text="{Binding User.Name}" LineHeight="1" TextColor="#0098A5" FontSize="24" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" BackgroundColor="Transparent" Margin="0, 15, 0, 0" Padding="0" Spacing="0">
+                                <Label Text="Warning" TextColor="#0098A5" FontSize="14" TextDecorations="Underline" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.HeaderTemplate>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Margin="20, 20, 20, 20" HorizontalOptions="Fill">
+                        <BoxView BackgroundColor="#DBDBE7" HeightRequest="1"
+                                             VerticalOptions="EndAndExpand" HorizontalOptions="FillAndExpand" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.FooterTemplate>
+                <DataTemplate>
+                    <StackLayout BackgroundColor="#FFFFFF">
+                    </StackLayout>
+                 </DataTemplate>
+            </CollectionView.FooterTemplate>
+        </CollectionView>
+        <VerticalStackLayout AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional" AbsoluteLayout.LayoutBounds=".5,1,1,70"
+                             BackgroundColor="#1A000000"
+                            Spacing="25"
+                            Padding="30,0"
+                            VerticalOptions="Center">
+            <Button
+                                x:Name="CounterBtn"
+                                Text="Click me"
+                                Clicked="CounterBtn_Clicked"
+                                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </AbsoluteLayout>
+    <!--<ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Hello, World!"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Welcome to .NET Multi-platform App UI"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
+                FontSize="18"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>-->
+
+</ContentPage>
